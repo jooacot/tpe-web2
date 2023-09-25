@@ -1,9 +1,9 @@
 Nombre integrantes : 
-Juan Altamiranda Garralda
+Juan Altamiranda Garralda,
 Joaquin Troncoso
 
 Emails :
-joakotroncoso.jt@gmail.com
+joakotroncoso.jt@gmail.com,
 juanaltamiranda2003@hotmail.com
 
 Tematica : Empresa de viajes a larga distancia.

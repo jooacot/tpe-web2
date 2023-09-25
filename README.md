@@ -8,7 +8,7 @@ juanaltamiranda2003@hotmail.com
 
 Tematica : Empresa de viajes a larga distancia.
 
-Descripción : El sitio web trata de que los usuarios encuentren su viaje de una manera fácil e intuitiva.
+Descripción : El sitio web trata de que los clientes encuentren su viaje de una manera fácil y rapida, brindando buen compromiso con la comodidad, la seguridad, y la satisfaccion del cliente para aquellos que deseen contratar un viaje a larga distancia con confianza.
 
 Diagrama de entidad relacion (DER) : 
 

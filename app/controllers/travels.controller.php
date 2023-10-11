@@ -15,8 +15,17 @@ class TravelsController {
 
     public function showTravels() {
         // obtengo los viajes del model
-        $travel = $this->model->getTravels();
+        $travels = $this->model->getTravels();
         //los muestro con el view
-        $this->view->showTravels($travel);
+        $this->view->showTravels($travels);
+    }
+    public function showTravelsById($id_viajes) {
+        $travel = $this->model->getTravelsById($id_viajes);
+        $this->view->showTravelsById($travel);
+    }
+
+    public function showDetails($id_viajes){
+        $detailsTravels = $this->model->getDetailsById($id_viajes);
+        $this->view->showDetails($detailsTravels);
     }
 }

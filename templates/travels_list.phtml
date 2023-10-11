@@ -1,8 +1,7 @@
 <?php require './templates/header.phtml'; ?>
-<div class="card m-auto" style="width: 60rem;">
+<div class="m-auto" style="width: 60rem;">
 <table class="table">
     <thead>
-
         <tr>
             <th scope="col">#</th>
             <th scope="col">Destino</th>
@@ -13,7 +12,7 @@
             <tr>
                 <th scope="row"><?= $travel->id_viajes ?></th>
                 <td><?= $travel->destino ?></td>
-                <td><button class="btn btn-secondary ms-5">Ver Más</button><button class="btn btn-success ms-5">Comprar</button></td>
+                <td><a href="details/<?= $travel->id_viajes ?> "><button class="btn btn-secondary ms-5">Ver Más</button></a><button class="btn btn-success ms-5">Comprar</button></td>
             </tr>
         <?php endforeach ?>
         </tbody>

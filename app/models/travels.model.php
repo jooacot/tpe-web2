@@ -6,7 +6,6 @@ class TravelsModel {
     function __construct()  {
         $this->db = new PDO('mysql:host=localhost;dbname=web_2_tpe;charset=utf8', 'root', '');
     }
-
     function getTravels() {
         $query = $this->db->prepare('SELECT * FROM viajes');
         $query->execute();
@@ -17,8 +16,21 @@ class TravelsModel {
 
         //travels es un arreglo con los viajes
     }
-    
+    function getTravelsById($id_viajes) {
+        $query = $this->db->prepare('SELECT * FROM viajes where id_viajes = ?');
+        $query->execute([$id_viajes]);
 
+        $travel = $query->fetchAll(PDO::FETCH_OBJ);
+        return $travel;
+    }
+
+    function getDetailsById($id_viajes){
+        $query = $this->db->prepare('SELECT precio,fecha_ida,fecha_vuelta FROM viajes where id_viajes = ?');
+        $query->execute([$id_viajes]);
+
+        $details = $query->fetchAll(PDO::FETCH_OBJ);
+        return $details;
+    }
 }
 
 ?>

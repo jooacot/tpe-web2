@@ -16,7 +16,6 @@ class TravelsModel {
         return $travels;
 
         //travels es un arreglo con los viajes
-    
     }
     
 

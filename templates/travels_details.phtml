@@ -1,6 +1,29 @@
 <?php require './templates/header.phtml'; ?>
-<?php foreach($travels as $travel) : ?> 
+<div class="m-auto" style="width: 60rem;">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Destino</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Fecha Ida</th>
+                <th scope="col">Fecha Vuelta</th>
+            </tr>
+        </thead>
 
-<?php endforeach ?>
+        <?php foreach ($travels as $travel) : ?>
+            <tbody>
+                <tr>
+                    <th scope="row"><?= $travel->id_viajes ?></th>
+                    <td><?= $travel->destino ?></td>
+                    <td><?= $travel->precio ?></td>
+                    <td><?= $travel->fecha_ida ?></td>
+                    <td><?= $travel->fecha_vuelta ?></button></a><button class="btn btn-success ms-5">Comprar</button> <a href="viajes"><button class="btn btn-secondary">Volver</button></td></a>
+                
 
+                </tr>
+            <?php endforeach ?>
+            </tbody>
+    </table>
+</div>
 <?php require './templates/footer.phtml'; ?>

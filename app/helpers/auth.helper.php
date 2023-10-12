@@ -2,13 +2,14 @@
 
 class AuthHelper
 {
-
     public static function init()
     {
         if (session_status() != PHP_SESSION_ACTIVE) {
             session_start();
         }
     }
+
+    
     public static function login($username)
     {
         AuthHelper::init();
@@ -16,6 +17,7 @@ class AuthHelper
         $_SESSION['USER_EMAIL'] = $username->username;
     }
 
+ 
     public static function logout()
     {
         AuthHelper::init();
@@ -25,9 +27,9 @@ class AuthHelper
     public static function verify()
     {
         AuthHelper::init();
-        if (!isset($_SESSION['USER_ID'])) {
-            header('Location: ' . BASE_URL . 'login');
-            die();
+        return (isset($_SESSION['USER_ID'])) ;
+        
         }
     }
-}
+
+

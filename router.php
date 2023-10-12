@@ -3,6 +3,7 @@
 require_once './app/controllers/travels.controller.php';
 require_once './app/controllers/auth.controller.php';
 
+
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 
 $action = 'viajes'; // accion por defecto
@@ -22,6 +23,11 @@ switch ($params[0]) {
         $AuthController = new AuthController();
         $AuthController->showLogin();
         break;
+    case 'logout':
+        $AuthController = new AuthController();
+        $AuthController->logout();
+        break;
+
     case 'validate':
         $AuthController = new AuthController();
         $AuthController->auth();

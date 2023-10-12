@@ -9,7 +9,7 @@ class AuthHelper
         }
     }
 
-    
+
     public static function login($username)
     {
         AuthHelper::init();
@@ -17,7 +17,7 @@ class AuthHelper
         $_SESSION['USER_EMAIL'] = $username->username;
     }
 
- 
+
     public static function logout()
     {
         AuthHelper::init();
@@ -27,9 +27,6 @@ class AuthHelper
     public static function verify()
     {
         AuthHelper::init();
-        return (isset($_SESSION['USER_ID'])) ;
-        
-        }
+        return (isset($_SESSION['USER_ID']));
     }
-
-
+}

@@ -15,28 +15,28 @@ if (!empty($_GET['action'])) {
 $params = explode('/', $action);
 
 switch ($params[0]) {
-    case 'viajes':
-        $TravelsController = new TravelsController();
-        $TravelsController->showTravels();
-        break;
-    case 'login':
-        $AuthController = new AuthController();
-        $AuthController->showLogin();
-        break;
+       case 'viajes':
+         $TravelsController = new TravelsController();
+         $TravelsController->showTravels();
+         break;
+       case 'login':
+         $AuthController = new AuthController();
+         $AuthController->showLogin();
+         break;
         case 'validate':
-            $AuthController = new AuthController();
-            $AuthController->auth();
-            break;
-            case 'logout':
-                $AuthController = new AuthController();
-                $AuthController->logout();
-                break;
-            case 'details':
-        $TravelsController = new TravelsController();
-        $id_viajes = $params[1];
-        $TravelsController->showDetails($id_viajes);
-        break;
-    default:
-        echo "404 Page Not Found"; // corregir esto
-        break;
+         $AuthController = new AuthController();
+         $AuthController->auth();
+         break;
+        case 'logout':
+         $AuthController = new AuthController();
+         $AuthController->logout();
+         break;
+        case 'details':
+         $TravelsController = new TravelsController();
+         $id_viajes = $params[1];
+         $TravelsController->showDetails($id_viajes);
+         break;
+        default:
+         echo "404 Page Not Found"; // corregir esto
+         break;
 }

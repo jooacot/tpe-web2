@@ -22,6 +22,10 @@ switch ($params[0]) {
         $AuthController = new AuthController();
         $AuthController->showLogin();
         break;
+    case 'validate':
+        $AuthController = new AuthController();
+        $AuthController->auth();
+        break;
     case 'details':
         $TravelsController = new TravelsController();
         $id_viajes = $params[1];

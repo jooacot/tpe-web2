@@ -18,9 +18,11 @@
                     <td><?= $travel->destino ?></td>
                     <td><?= $travel->precio ?></td>
                     <td><?= $travel->fecha_ida ?></td>
-                    <td><?= $travel->fecha_vuelta ?></button></a> <?php if (!AuthHelper::verify()) : ?>
-                            <a href="login"><button class="btn btn-primary">Comprar</button></a> <?php else : ?>
-                            <button class="btn btn-primary">Comprar</button>
+                    <td><?= $travel->fecha_vuelta ?></button></a> 
+                        <?php if (!AuthHelper::verify()) : ?>
+                            <a href="login"><button class="btn btn-primary">Agregar al carrito</button></a> 
+                            <?php else : ?>
+                           <a href="shopping"><button class="btn btn-primary">Agregar al carrito</button></a>
                         <?php endif ?>
                         <a href="viajes"><button class="btn btn-secondary">Volver</button>
                     </td></a>

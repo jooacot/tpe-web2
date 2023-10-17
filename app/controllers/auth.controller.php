@@ -6,7 +6,7 @@ require_once './app/helpers/auth.helper.php';
 class AuthController
 {
     private $view;
-    private $model; // falta crear UserModel para traer los datos
+    private $model; 
 
     function __construct(){
         $this->view = new AuthView();

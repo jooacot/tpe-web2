@@ -1,4 +1,4 @@
-<?php if (AuthHelper::verify()) : ?>
+<?php if (isset($_SESSION['USER_ID'])) : ?>
     <div class="mt-5 w-25 mx-auto">
     <form method="POST" action="add">
         <div class="mb-3">

@@ -14,7 +14,7 @@
                 <th scope="row"><?= $travel->id_viajes ?></th>
                 <td><?= $travel->destino ?></td>
                 <td><a href="details/<?= $travel->id_viajes ?> "><button class="btn btn-secondary ms-5">Ver Más</button></a> 
-                <?php if (AuthHelper::verify()) : ?> 
+                <?php if (isset($_SESSION['USER_ID'])) : ?> 
                     <a href="delete/<?= $travel->id_viajes ?> "><button class="btn btn-danger ms-5">Borrar</button></a></td>
                 <?php endif ?>
             </tr>

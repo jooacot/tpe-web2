@@ -1,11 +1,10 @@
 <?php
-class UserModel {
-    private $db;
-
-    function __construct(){
-        $this->db = new PDO('mysql:host=localhost;dbname=web_2_tpe;charset=utf8', 'root', '');
+require_once './database/model.php';
+class UserModel extends Model {
+    function __construct()
+    {
+        parent::__contruct();
     }
-
         public function getByUsername ($username){
             $query= $this->db->prepare('SELECT * FROM usuarios WHERE username = ?');
             $query->execute([$username]);

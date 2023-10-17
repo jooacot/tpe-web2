@@ -23,4 +23,15 @@ class TravelsController {
         $detailsTravels = $this->model->getDetailsById($id_viajes);
         $this->view->showDetails($detailsTravels);
     }
+    public function addTravel(){
+        AuthHelper::verify();
+        $destino = $_POST['destino'];
+        $precio = $_POST['precio'];
+        $fecha_ida = $_POST['fecha_ida'];
+        $fecha_vuelta = $_POST['fecha_vuelta'];
+        $id_usuario = $_POST['id_usuario'];
+
+        $this->model->insertTravel($destino, $precio, $fecha_ida, $fecha_vuelta, $id_usuario);
+        header('Location: ' . BASE_URL);
+    }
 }

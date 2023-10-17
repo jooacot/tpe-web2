@@ -7,7 +7,6 @@ class TravelsView {
     function showDetails($travels){
         require './templates/travels_details.phtml';
     }
- 
 }
 
 ?>  

@@ -36,6 +36,10 @@ switch ($params[0]) {
          $id_viajes = $params[1];
          $TravelsController->showDetails($id_viajes);
          break;
+         case 'add' :
+        $TravelsController = new TravelsController();
+        $TravelsController->addTravel();
+        break;
         default:
          echo "404 Page Not Found"; // corregir esto
          break;

@@ -24,5 +24,11 @@ class TravelsModel {
         $details = $query->fetchAll(PDO::FETCH_OBJ);
         return $details;
     }
+    function insertTravel($destino, $precio, $fecha_ida, $fecha_vuelta){
+        $query = $this->db->prepare('INSERT INTO viajes (destino, precio, fecha_ida, fecha_vuelta) VALUES (?, ?, ?, ?)');
+        $query->execute([$destino, $precio, $fecha_ida, $fecha_vuelta]);
+
+        return $this->db->lastInsertId();
+    }
 }
 

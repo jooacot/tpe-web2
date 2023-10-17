@@ -1,0 +1,13 @@
+<?php require './templates/header.phtml'; ?>
+<?php if (isset($_SESSION['USER_ID'])) : ?>
+    <div class="mt-5 w-25 mx-auto">
+    <form method="POST" action="add">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Ussername</label>
+            <input type="text" class="form-control" name="destino" aria-describedby="emailHelp">
+        </div>  
+        <button type="submit" class="btn btn-primary">Agregar</button>
+    </form>
+</div>
+<?php endif ?>
+<?php require './templates/footer.phtml'; ?>

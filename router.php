@@ -8,44 +8,50 @@ define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'
 
 $action = 'viajes'; // accion por defecto
 if (!empty($_GET['action'])) {
-    $action = $_GET['action'];
+  $action = $_GET['action'];
 }
 
 // parsea la accion para separar accion real de parametros
 $params = explode('/', $action);
 
 switch ($params[0]) {
-       case 'viajes':
-         $TravelsController = new TravelsController();
-         $TravelsController->showTravels();
-         break;
-       case 'login':
-         $AuthController = new AuthController();
-         $AuthController->showLogin();
-         break;
-        case 'validate':
-         $AuthController = new AuthController();
-         $AuthController->auth();
-         break;
-        case 'logout':
-         $AuthController = new AuthController();
-         $AuthController->logout();
-         break;
-        case 'details':
-         $TravelsController = new TravelsController();
-         $id_viajes = $params[1];
-         $TravelsController->showDetails($id_viajes);
-         break;
-         case 'add' :
-        $TravelsController = new TravelsController();
-        $TravelsController->addTravel();
-        break;
-        case 'delete':
-          $TravelsController = new TravelsController();
-          $id_viajes = $params[1];
-          $TravelsController->removeTravel($id_viajes);
-          break;
-        default:
-         echo "404 Page Not Found"; // corregir esto
-         break;
+  case 'viajes':
+    $TravelsController = new TravelsController();
+    $TravelsController->showTravels();
+    break;
+  case 'login':
+    $AuthController = new AuthController();
+    $AuthController->showLogin();
+    break;
+  case 'validate':
+    $AuthController = new AuthController();
+    $AuthController->auth();
+    break;
+  case 'logout':
+    $AuthController = new AuthController();
+    $AuthController->logout();
+    break;
+  case 'details':
+    $TravelsController = new TravelsController();
+    $TravelsController->showDetails($params[1]);
+    break;
+  case 'addTravel':
+    $TravelsController = new TravelsController();
+    $TravelsController->addTravel();
+    break;
+  case 'deleteTravel':
+    $TravelsController = new TravelsController();
+    $TravelsController->removeTravel($params[1]);
+    break;
+  case 'editTravel':
+    $TravelsController = new TravelsController();
+    if(!empty($params[1])){
+      $TravelsController->editTravel($params[1]);
+    } else {
+      header("Location: ".BASE_URL);
+    }
+    break;
+  default:
+    echo "404 Page Not Found"; // corregir esto
+    break;
 }

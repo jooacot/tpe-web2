@@ -39,4 +39,23 @@ class TravelsController {
         $this->model->deleteTravel($id_viajes);
         header('Location: ' . BASE_URL);
     }
+
+    public function editTravel($id_viajes) {
+        AuthHelper::verify();
+        if($_SERVER["REQUEST_METHOD"] == "GET"){
+            $this->view->showEdit($id_viajes);
+        } else if($_SERVER["REQUEST_METHOD"] == "POST") {
+            $destino = $_POST['destino'];
+            $precio = $_POST['precio'];
+            $fecha_ida = $_POST['fecha_ida'];
+            $fecha_vuelta = $_POST['fecha_vuelta'];
+            $id_usuario = $_SESSION['USER_ID'];  
+
+            $this->model->updateTravel($destino, $precio, $fecha_ida, $fecha_vuelta, $id_usuario, $id_viajes);
+            header('Location: ' . BASE_URL);
+        }
+       
+        
+    }
+
 }

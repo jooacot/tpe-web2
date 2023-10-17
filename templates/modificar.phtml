@@ -1,6 +1,6 @@
-<?php if (isset($_SESSION['USER_ID'])) : ?>
+<?php require './templates/header.phtml'; ?>
     <div class="mt-5 w-25 mx-auto">
-    <form method="POST" action="addTravel">
+    <form method="POST" action="editTravel/<?=$id_viajes?>">
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Destino</label>
             <input type="text" class="form-control" name="destino" aria-describedby="emailHelp">
@@ -17,7 +17,7 @@
             <label for="exampleInputPassword1" class="form-label">Fecha Vuelta</label>
             <input type="text" class="form-control" name="fecha_vuelta">
         </div>
-        <button type="submit" class="btn btn-primary">Agregar</button>
+        <button type="submit" class="btn btn-primary">Modificar</button>
     </form>
 </div>
-<?php endif ?>
+<?php require './templates/footer.phtml'; ?>

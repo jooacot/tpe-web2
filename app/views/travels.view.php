@@ -7,6 +7,12 @@ class TravelsView {
     function showDetails($travels){
         require './templates/travels_details.phtml';
     }
+    function showError($error) {
+        require './templates/error.phtml';
+    }
+    function showEdit($id_viajes){
+        require './templates/modificar.phtml';
+    }
 }
 
 ?>  

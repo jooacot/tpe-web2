@@ -34,4 +34,10 @@ class TravelsModel extends Model{
         $query->execute([$id_viajes]);
     
     }
+
+    function updateTravel ($destino, $precio, $fecha_ida, $fecha_vuelta, $id_usuario, $id_viajes){
+        $query = $this->db->prepare('UPDATE viajes SET destino = ?, precio = ?, fecha_ida = ?, fecha_vuelta = ?, id_usuario = ? WHERE id_viajes = ?');
+        $query->execute([$destino, $precio, $fecha_ida, $fecha_vuelta, $id_usuario, $id_viajes]);   
+        return $query;
+    }
 }

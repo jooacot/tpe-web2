@@ -18,7 +18,7 @@
                     <td><?= $travel->destino ?></td>
                     <td><?= $travel->precio ?></td>
                     <td><?= $travel->fecha_ida ?></td>
-                    <td><?= $travel->fecha_vuelta ?> <a href="viajes"><button class="btn btn-secondary">Volver</button></td></a>
+                <td><?= $travel->fecha_vuelta ?> <a href="viajes"><button class="btn btn-secondary">Volver</button> <a href="editTravel/<?=$travel->id_viajes?>"><button class="btn btn-warning">Modificar</button></td></a>
                 </tr>
             <?php endforeach ?>
             </tbody>

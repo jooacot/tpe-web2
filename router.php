@@ -40,6 +40,11 @@ switch ($params[0]) {
         $TravelsController = new TravelsController();
         $TravelsController->addTravel();
         break;
+        case 'delete':
+          $TravelsController = new TravelsController();
+          $id_viajes = $params[1];
+          $TravelsController->removeTravel($id_viajes);
+          break;
         default:
          echo "404 Page Not Found"; // corregir esto
          break;

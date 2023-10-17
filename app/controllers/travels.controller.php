@@ -29,9 +29,16 @@ class TravelsController {
         $precio = $_POST['precio'];
         $fecha_ida = $_POST['fecha_ida'];
         $fecha_vuelta = $_POST['fecha_vuelta'];
-        $id_usuario = $_POST['id_usuario'];
+        $id_usuario = $_SESSION['USER_ID'];
+        
 
         $this->model->insertTravel($destino, $precio, $fecha_ida, $fecha_vuelta, $id_usuario);
+        header('Location: ' . BASE_URL);
+    }
+
+
+    public function removeTravel ($id_viajes) {
+        $this->model->deleteTravel($id_viajes);
         header('Location: ' . BASE_URL);
     }
 }

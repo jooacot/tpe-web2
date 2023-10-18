@@ -26,9 +26,9 @@ class ClientsController {
         $nombre = $_POST['nombre'];
         $apellido = $_POST['apellido'];
         $edad = $_POST['edad'];
-        $id_usuario = $_SESSION['USER_ID'];
+      
 
-        $this->model->insertClient($nombre, $apellido, $edad, $id_usuario);
+        $this->model->insertClient($nombre, $apellido, $edad);
         header('Location: ' . BASE_URL . 'clientes');
     }
     public function removeClient($id){
@@ -44,10 +44,9 @@ class ClientsController {
         } else if($_SERVER["REQUEST_METHOD"] == "POST") {
             $nombre = $_POST['nombre'];
             $apellido = $_POST['apellido'];
-            $edad = $_POST['edad'];
-            $id_usuario = $_SESSION['USER_ID'];  
+            $edad = $_POST['edad'];  
 
-            $this->model->updateClient($nombre, $apellido, $edad, $id_usuario);
+            $this->model->updateClient($nombre, $apellido, $edad, $id_clients);
             header('Location: ' . BASE_URL. 'clientes');
         }
        

@@ -18,7 +18,7 @@ class ClientsModel extends Model{
         $query = $this->db->prepare('SELECT * FROM clientes where id = ?');
         $query->execute([$id]);
 
-        $details = $query->fetchAll(PDO::FETCH_OBJ);
+        $details = $query->fetch(PDO::FETCH_OBJ);
         return $details;
     }
     function insertClient($nombre, $apellido, $edad)

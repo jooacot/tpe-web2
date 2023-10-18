@@ -18,7 +18,7 @@ class TravelsModel extends Model{
         $query = $this->db->prepare('SELECT * FROM viajes where id_viajes = ?');
         $query->execute([$id_viajes]);
 
-        $details = $query->fetchAll(PDO::FETCH_OBJ);
+        $details = $query->fetch(PDO::FETCH_OBJ);
         return $details;
     }
     function insertTravel($destino, $precio, $fecha_ida, $fecha_vuelta, $id_usuario)

@@ -10,7 +10,7 @@
             </tr>
         </thead>
 
-        <?php foreach ($clients as $client) : ?>
+        
             <tbody>
                 <tr>
                     <th scope="row"><?= $client->id ?></th>
@@ -19,7 +19,7 @@
                     <td><?= $client->edad ?></td>
                 <td><a href="clientes"><button class="btn btn-secondary">Volver</button> <a href="editClient/<?=$client->id?>"><button class="btn btn-warning">Modificar</button></td></a>
                 </tr>
-            <?php endforeach ?>
+            
             </tbody>
     </table>
 </div>

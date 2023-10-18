@@ -4,7 +4,7 @@ class ClientsView {
     function showClients($clients) {
         require './templates/clients_list.phtml';
     }
-    function showDetailsClients($clients){
+    function showDetailsClients($client){
         require './templates/clients_details.phtml';
     }
     function showError($error) {

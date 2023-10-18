@@ -13,10 +13,18 @@
             <label for="exampleInputPassword1" class="form-label">Fecha Ida</label>
             <input type="text" class="form-control" name="fecha_ida">
         </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">ID Usuario</label>
-            <input type="number" class="form-control" name="id_usuario">
-        </div>
+        <select name="id_usuario" id="">
+           
+           <?php
+            foreach($clients as $client)  {
+
+                ?>
+            <option value="<?= $client->id_clients?>"><?= $client->nombre?></option>
+            <?php
+             }
+            ?>
+
+        </select>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Fecha Vuelta</label>
             <input type="text" class="form-control" name="fecha_vuelta">

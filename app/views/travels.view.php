@@ -4,13 +4,13 @@ class TravelsView {
     function showTravels($travels, $clients) {
         require './templates/travels_list.phtml';
     }
-    function showDetails($travels){
+    function showDetails($travel){
         require './templates/travels_details.phtml';
     }
     function showError($error) {
         require './templates/error.phtml';
     }
-    function showEdit($id_viajes){
+    function showEdit($id_viajes, $clients){
         require './templates/modificarTravel.phtml';
     }
 }

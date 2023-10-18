@@ -25,6 +25,8 @@ class TravelsController {
     }
     public function showDetails($id_viajes){
         $detailsTravels = $this->model->getDetailsById($id_viajes);
+        $cliente = $this->modelClient->getDetailsById($detailsTravels->id_usuario);
+        $detailsTravels->id_usuario = $cliente->nombre;
         $this->view->showDetails($detailsTravels);
     }
     public function addTravel(){
@@ -47,7 +49,8 @@ class TravelsController {
     public function editTravel($id_viajes) {
         AuthHelper::verify();
         if($_SERVER["REQUEST_METHOD"] == "GET"){
-            $this->view->showEdit($id_viajes);
+            $clients = $this->modelClient->getClients();
+            $this->view->showEdit($id_viajes, $clients);
         } else if($_SERVER["REQUEST_METHOD"] == "POST") {
             $destino = $_POST['destino'];
             $precio = $_POST['precio'];

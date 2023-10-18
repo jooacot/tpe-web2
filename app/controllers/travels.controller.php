@@ -2,22 +2,26 @@
 
 require_once './app/models/travels.model.php';
 require_once './app/views/travels.view.php';
-
+require_once './app/models/clients.model.php';
 class TravelsController {
     private $model;
     private $view;
+    private $modelClient;
 
     public function __construct() {
         $this->model = new TravelsModel();
         $this->view = new TravelsView();
+        $this->modelClient = new ClientsModel();
     }
 
     public function showTravels() {
+
         // obtengo los viajes del model
         AuthHelper::init();
         $travels = $this->model->getTravels();
+        $clients = $this->modelClient->getClients();
         //los muestro con el view
-        $this->view->showTravels($travels);
+        $this->view->showTravels($travels, $clients);
     }
     public function showDetails($id_viajes){
         $detailsTravels = $this->model->getDetailsById($id_viajes);

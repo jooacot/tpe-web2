@@ -1,7 +1,7 @@
 <?php
 
 class TravelsView {
-    function showTravels($travels) {
+    function showTravels($travels, $clients) {
         require './templates/travels_list.phtml';
     }
     function showDetails($travels){

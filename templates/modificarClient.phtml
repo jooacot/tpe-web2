@@ -1,0 +1,19 @@
+<?php require './templates/header.phtml'; ?>
+    <div class="mt-5 w-25 mx-auto">
+    <form method="POST" action="editClient/<?=$id?>">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Nombre</label>
+            <input type="text" class="form-control" name="nombre" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Apellido</label>
+            <input type="text" class="form-control" name="apellido">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Edad</label>
+            <input type="number" class="form-control" name="edad">
+        </div>
+        <button type="submit" class="btn btn-primary">Modificar</button>
+    </form>
+</div>
+<?php require './templates/footer.phtml'; ?>

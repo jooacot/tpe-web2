@@ -1,0 +1,25 @@
+<?php require './templates/header.phtml'; ?>
+<?php require './templates/clients_abm.phtml'; ?>
+<div class="m-auto" style="width: 60rem;">
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+        </tr>
+    </thead>
+    <?php foreach ($clients as $client) : ?>
+        <tbody>
+            <tr>
+                <th scope="row"><?= $client->id ?></th>
+                <td><?=  $client->nombre ?></td>
+                <td><a href="detailsClient/<?= $client->id ?> "><button class="btn btn-secondary ms-5">Ver Más</button></a> 
+                <?php if (isset($_SESSION['USER_ID'])) : ?> 
+                    <a href="deleteClient/<?= $client->id ?> "><button class="btn btn-danger ms-5">Borrar</button></a></td>
+                <?php endif ?>
+            </tr>
+        <?php endforeach ?>
+        </tbody>
+</table>
+</div>
+<?php require './templates/footer.phtml'; ?>

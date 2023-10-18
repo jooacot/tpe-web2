@@ -5,6 +5,7 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Destino</th>
+                <th scope="col">Id Usuario</th>
                 <th scope="col">Precio</th>
                 <th scope="col">Fecha Ida</th>
                 <th scope="col">Fecha Vuelta</th>
@@ -16,6 +17,7 @@
                 <tr>
                     <th scope="row"><?= $travel->id_viajes ?></th>
                     <td><?= $travel->destino ?></td>
+                    <td><?= $travel->id_usuario ?></td>
                     <td><?= $travel->precio ?></td>
                     <td><?= $travel->fecha_ida ?></td>
                 <td><?= $travel->fecha_vuelta ?> <a href="viajes"><button class="btn btn-secondary">Volver</button> <a href="editTravel/<?=$travel->id_viajes?>"><button class="btn btn-warning">Modificar</button></td></a>

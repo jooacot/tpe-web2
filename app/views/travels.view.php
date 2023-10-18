@@ -11,7 +11,7 @@ class TravelsView {
         require './templates/error.phtml';
     }
     function showEdit($id_viajes){
-        require './templates/modificar.phtml';
+        require './templates/modificarTravel.phtml';
     }
 }
 

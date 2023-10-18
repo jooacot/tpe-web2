@@ -2,6 +2,7 @@
 
 require_once './app/controllers/travels.controller.php';
 require_once './app/controllers/auth.controller.php';
+require_once './app/controllers/clients.controller.php';
 
 
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
@@ -31,7 +32,7 @@ switch ($params[0]) {
     $AuthController = new AuthController();
     $AuthController->logout();
     break;
-  case 'details':
+  case 'detailsTravel':
     $TravelsController = new TravelsController();
     $TravelsController->showDetails($params[1]);
     break;
@@ -51,7 +52,31 @@ switch ($params[0]) {
       header("Location: ".BASE_URL);
     }
     break;
-  default:
-    echo "404 Page Not Found"; // corregir esto
-    break;
+    case 'clientes':
+      $ClientsController = new ClientsController();
+      $ClientsController->showClients();
+      break;
+      case 'detailsClient':
+        $ClientsController = new ClientsController();
+        $ClientsController->showDetailsClients($params[1]);
+        break;
+      case 'addClient':
+        $ClientsController = new ClientsController();
+        $ClientsController->addCliente();
+        break;
+      case 'deleteClient':
+        $ClientsController = new ClientsController();
+        $ClientsController->removeClient($params[1]);
+        break;
+      case 'editClient':
+        $ClientsController = new ClientsController();
+        if(!empty($params[1])){
+          $ClientsController->editClients($params[1]);
+        } else {
+          header("Location: ".BASE_URL);
+        }
+        break;
+        default:
+        echo "404 Page Not Found"; // corregir esto
+        break;
 }
